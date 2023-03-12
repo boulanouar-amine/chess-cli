@@ -49,9 +49,9 @@ public class Board {
 
         p1.afficher();
 
-        for (int x = 0; x < 8; x++) {
-            System.out.print(x +"|  ");
-            for (int y = 0; y < 8; y++) {
+        for (int y = 0; y < 8; y++) {
+            System.out.print(y +"|  ");
+            for (int x = 0; x < 8; x++) {
 
                 if (boardData[x][y].getPiece() != null) {
                     System.out.print(boardData[x][y].getPiece().getSymbol() + "  ");
@@ -75,22 +75,22 @@ public class Board {
         p2.afficher();
     }
 
-    private void initializePawns(int x, String color) {
-        for (int y = 0; y < 8; y++) {
-            boardData[x][y] = new Square(x, y, new Pawn(color));
+    private void initializePawns(int y, String color) {
+        for (int i = 0; i < 8; i++) {
+            boardData[i][y] = new Square(i, y, new Pawn(color));
         }
     }
 
-    private void intializeOtherPieces(int x, String color) {
+    private void intializeOtherPieces(int y, String color) {
 
-        boardData[x][0] = new Square(x, 0, new Rook(color));
-        boardData[x][1] = new Square(x, 1, new Knight(color));
-        boardData[x][2] = new Square(x, 2, new Bishop(color));
-        boardData[x][3] = new Square(x, 3, new Queen(color));
-        boardData[x][4] = new Square(x, 4, new King(color));
-        boardData[x][5] = new Square(x, 5, new Bishop(color));
-        boardData[x][6] = new Square(x, 6, new Knight(color));
-        boardData[x][7] = new Square(x, 7, new Rook(color));
+        boardData[0][y] = new Square(0, y, new Rook(color));
+        boardData[1][y] = new Square(1, y, new Knight(color));
+        boardData[2][y] = new Square(2, y, new Bishop(color));
+        boardData[3][y] = new Square(3, y, new Queen(color));
+        boardData[4][y] = new Square(4, y, new King(color));
+        boardData[5][y] = new Square(5, y, new Bishop(color));
+        boardData[6][y] = new Square(6, y, new Knight(color));
+        boardData[7][y] = new Square(7, y, new Rook(color));
 
     }
 
@@ -109,9 +109,9 @@ public class Board {
         initializePawns(6, p2.getColor());
 
         // initialize remaining boardData without any piece
-        for (int x = 2; x < 6; x++) // 0-1 are the white pieces and 6-8 are the black pieces
+        for (int y = 2;  y < 6; y++) // 0-1 are the white pieces and 6-8 are the black pieces
         {
-            for (int y = 0; y < 8; y++) {
+            for (int x = 0; x < 8; x++) {
                 boardData[x][y] = new Square(x, y, null);
             }
         }

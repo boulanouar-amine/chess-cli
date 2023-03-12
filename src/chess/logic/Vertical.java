@@ -2,6 +2,9 @@ package chess.logic;
 
 import chess.Board;
 import chess.Move;
+import chess.pieces.Piece;
+
+import java.util.Objects;
 
 public class Vertical extends Decorator{
     public Vertical(MovePattern movePattern) {
@@ -18,8 +21,11 @@ public class Vertical extends Decorator{
         int fromX = move.getFrom().getX();
         int toX = move.getTo().getX();
 
+
         for (int y = fromY; y<toY ;y++) {
-            if((Board.getBoard().getSquare(fromX,y).getPiece()==null))
+            Piece piece = Board.getBoard().getSquare(fromX,y).getPiece();
+
+            if(piece != null && Objects.equals(piece.getColor(), move.getFrom().getPiece().getColor()))
                 return false;
         }
 
