@@ -10,10 +10,15 @@ public class Horizontal extends Decorator{
     @Override
     public boolean isAvalidMove(Move move){
 
-        int fromX = move.getFrom().getX();
-       int toX = move.getTo().getX();
 
-        return fromX > 0 && fromX < 7 && fromX != toX && toX > 0 && toX < 7;
+        int fromY = move.getFrom().getY();
+        int toY = move.getTo().getY();
+
+        int fromX = move.getFrom().getX();
+        int toX = move.getTo().getX();
+
+        return !(fromY < 0 || fromY > 7 || toY < 0 || toY > 7 || fromX!=toX);
     }
+
 
 }

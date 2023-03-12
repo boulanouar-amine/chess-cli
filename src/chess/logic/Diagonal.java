@@ -10,7 +10,7 @@ public class Diagonal extends Decorator {
 
     @Override
     public boolean isAvalidMove(Move move) {
-        return false;
+        return true;
     }
 
     @Override

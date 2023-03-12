@@ -12,6 +12,14 @@ public  class Move {
         this.to=to;
     }
 
+    @Override
+    public String toString() {
+        return "Move{" +
+                "from=" + from +
+                ", to=" + to +
+                '}';
+    }
+
     public Square getFrom() {
         return from;
     }

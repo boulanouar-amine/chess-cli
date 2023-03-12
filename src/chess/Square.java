@@ -40,4 +40,13 @@ public class Square {
     public void setPiece(Piece piece) {
         this.piece = piece;
     }
+
+    @Override
+    public String toString() {
+        return "Square{" +
+                "x=" + x +
+                ", y=" + y +
+                ", piece=" + piece +
+                '}';
+    }
 }

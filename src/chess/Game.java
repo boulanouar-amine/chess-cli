@@ -19,13 +19,9 @@ public class Game {
 
         Piece rook = board.getSquare(0, 0).getPiece();
 
-        Square square2 = board.getSquare(3, 7);
+        Square square2 = board.getSquare(0, 2);
 
         rook.move(square2);
-
-
-
-
 
 
         //todo set move following chess notation for exampe move("e4") => move("46","44")

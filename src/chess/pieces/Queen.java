@@ -14,7 +14,7 @@ public class Queen extends Piece {
 
     @Override
     public void movePattern(MovePattern movePattern) {
-        setMovePattern(new Horizontal(new Vertical(new BaseMovement())));
+        setMovePattern(new Vertical(new Horizontal(new BaseMovement())));
     }
 
 
