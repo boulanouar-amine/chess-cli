@@ -11,6 +11,7 @@ public class Vertical extends Decorator{
     @Override
     public boolean isAvalidMove(){
 
+        movePattern.move(getMove());
 
         int fromY = getMove().getFrom().getY();
         int toY = getMove().getTo().getY();
@@ -18,8 +19,9 @@ public class Vertical extends Decorator{
         int fromX = getMove().getFrom().getX();
         int toX = getMove().getTo().getX();
 
-        for (int y = fromY; y<toY ;y++) {
+        for (int y = fromY +1; y<=toY ;y++) {
             Piece piece = Board.getBoard().getSquare(fromX,y).getPiece();
+
              if(isSameColor(piece)) return false;
         }
 

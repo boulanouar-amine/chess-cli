@@ -23,6 +23,7 @@ public class Horizontal extends Decorator{
         for (int x = fromX; x<toX ;x++) {
 
             Piece piece = Board.getBoard().getSquare(x,fromY).getPiece();
+
             if(isSameColor(piece)) return false;
         }
 

@@ -19,17 +19,23 @@ public abstract class MovePattern {
         this.move= move;
         if(isAvalidMove()) move.move();
 
-        else System.out.println("non valid move");
+        else{
+
+            System.out.println(move);
+            System.out.println("non valid move");
+        }
+
     }
 
-    public boolean isaPiece(Piece piece){
-        return piece == null;
-    }
+
     public boolean isSameColor(Piece piece){
+
+        if (piece==null)
+            return false;
 
         Piece targetPiece = move.getFrom().getPiece();
 
-        return isaPiece(piece) && Objects.equals(piece.getColor(), targetPiece.getColor());
+        return Objects.equals(piece.getColor(), targetPiece.getColor());
     }
 
 
