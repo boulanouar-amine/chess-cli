@@ -1,10 +1,7 @@
 package chess.logic;
 
 import chess.Board;
-import chess.Move;
 import chess.pieces.Piece;
-
-import java.util.Objects;
 
 public class Vertical extends Decorator{
     public Vertical(MovePattern movePattern) {
@@ -12,21 +9,18 @@ public class Vertical extends Decorator{
     }
 
     @Override
-    public boolean isAvalidMove(Move move){
+    public boolean isAvalidMove(){
 
 
-        int fromY = move.getFrom().getY();
-        int toY = move.getTo().getY();
+        int fromY = getMove().getFrom().getY();
+        int toY = getMove().getTo().getY();
 
-        int fromX = move.getFrom().getX();
-        int toX = move.getTo().getX();
-
+        int fromX = getMove().getFrom().getX();
+        int toX = getMove().getTo().getX();
 
         for (int y = fromY; y<toY ;y++) {
             Piece piece = Board.getBoard().getSquare(fromX,y).getPiece();
-
-            if(piece != null && Objects.equals(piece.getColor(), move.getFrom().getPiece().getColor()))
-                return false;
+             if(isSameColor(piece)) return false;
         }
 
         return !(fromY < 0 || fromY > 7 || toY < 0 || toY > 7 || fromX!=toX);

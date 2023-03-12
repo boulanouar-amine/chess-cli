@@ -9,7 +9,7 @@ public class Diagonal extends Decorator {
     }
 
     @Override
-    public boolean isAvalidMove(Move move) {
+    public boolean isAvalidMove() {
         return true;
     }
 
