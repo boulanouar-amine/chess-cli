@@ -5,7 +5,7 @@ public class Player {
     private String name = "anonymous";
     private String color = "White";
 
-    Player(){}
+
     Player(String color){
 
         this.color = color;
@@ -33,6 +33,6 @@ public class Player {
 
     void afficher(){
         System.out.println();
-        System.out.println("\t\t\t\t\t\t\t\t\t\t " + getName() + " \t\t\t\t");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t " + getName() + " \t\t\t\t");
     }
 }

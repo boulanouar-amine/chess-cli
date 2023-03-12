@@ -4,7 +4,7 @@ import chess.Move;
 
 public class Diagonal extends Decorator {
 
-    Diagonal(MovePattern movePattern) {
+    public Diagonal(MovePattern movePattern) {
         super(movePattern);
     }
 

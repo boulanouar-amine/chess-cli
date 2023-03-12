@@ -22,7 +22,7 @@ public abstract class MovePattern {
         else{
 
             System.out.println(move);
-            System.out.println("non valid move");
+            System.out.println("non valid move " + getClass().getSimpleName() );
         }
 
     }
@@ -30,12 +30,11 @@ public abstract class MovePattern {
 
     public boolean isSameColor(Piece piece){
 
-        if (piece==null)
+        if (piece==null || move.getFrom().getPiece() == null)
             return false;
 
-        Piece targetPiece = move.getFrom().getPiece();
 
-        return Objects.equals(piece.getColor(), targetPiece.getColor());
+        return Objects.equals(piece.getColor(), move.getFrom().getPiece().getColor());
     }
 
 

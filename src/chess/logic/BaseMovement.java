@@ -11,7 +11,7 @@ public class BaseMovement extends MovePattern {
     }
 
     @Override
-    public void move(Move move) {
+    public void move(Move move){
 
     }
 }

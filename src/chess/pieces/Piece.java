@@ -7,7 +7,7 @@ import chess.logic.MovePattern;
 public abstract class Piece {
 
     private Square square;
-    private final String color;
+    private String color;
     private MovePattern movePattern;
     public Piece(String color) {
 
@@ -20,7 +20,9 @@ public abstract class Piece {
     }
 
     public String getSymbol() {
-        return color + "-" + getClass().getSimpleName();
+        if ( color.trim().length()>4 )
+            color = color.trim().toLowerCase().substring(0,4);
+        return  color + "-" + getClass().getSimpleName();
     }
 
     public MovePattern getMovePattern() {
@@ -36,6 +38,11 @@ public abstract class Piece {
     public void move(Square square){
 
         movePattern.move(new Move(getSquare(),square));
+    }
+
+    public void move(String string){
+
+        movePattern.move(new Move(getSquare(),Square.fromString(string)));
     }
 
     public void setSquare(Square square) {

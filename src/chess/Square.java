@@ -14,6 +14,32 @@ public class Square {
         if(piece!=null) this.piece.setSquare(this);
     }
 
+    private static int getXnumber(char x){
+
+        return switch (x) {
+            case 'a' -> 0 ;
+            case 'b' -> 1;
+            case 'c' -> 2;
+            case 'd' -> 3;
+            case 'e' -> 4;
+            case 'f' -> 5;
+            case 'g' -> 6;
+            case 'h' -> 7;
+            default -> 9;
+
+        };
+    }
+    public static Square fromString(String string) {
+
+        string = string.strip();
+        int x = getXnumber(string.charAt(0));
+        int y = Integer.parseInt(String.valueOf(string.charAt(1)));
+
+
+        return Board.getBoard().getSquare(x,y);
+    }
+
+
     public int getX() {
         return x;
     }
@@ -39,9 +65,10 @@ public class Square {
 
     public void setPiece(Piece piece) {
         this.piece = piece;
+        if(piece!=null) this.piece.setSquare(this);
     }
 
-    private String  getXvalue(){
+    private String getXvalue(){
 
         return switch (x) {
             case 0 -> "a";
@@ -56,6 +83,8 @@ public class Square {
 
         };
     }
+
+
     @Override
     public String toString() {
         return "Square{" +

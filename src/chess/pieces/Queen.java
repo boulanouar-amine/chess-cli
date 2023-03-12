@@ -1,6 +1,7 @@
 package chess.pieces;
 
 import chess.logic.BaseMovement;
+import chess.logic.Diagonal;
 import chess.logic.Horizontal;
 import chess.logic.Vertical;
 
@@ -13,7 +14,8 @@ public class Queen extends Piece {
 
     @Override
     public void movePattern() {
-        setMovePattern(new Horizontal(new Vertical(new BaseMovement())));
+        setMovePattern(new Diagonal(
+                new Horizontal(new Vertical(new BaseMovement()))));
     }
 
 

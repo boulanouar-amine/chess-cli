@@ -8,15 +8,15 @@ import java.util.List;
 
 public class Board {
 
-    private Player p1;
-    private Player p2;
+    private Player p1 = new Player("White");
+    private Player p2 = new Player("Black");
 
 
     private static Board instance;
     private static Square[][] boardData = new Square[8][8];
 
     private Board() {
-        p2.setColor("Black");
+
         initializeBoard();
     }
     private Board(Player p1, Player p2) {
@@ -48,28 +48,33 @@ public class Board {
     public void afficher() {
 
         p1.afficher();
+        System.out.println(" |\t=================================================================================================================================");
 
         for (int y = 0; y < 8; y++) {
+
             System.out.print(y +"|  ");
+
+
             for (int x = 0; x < 8; x++) {
 
                 if (boardData[x][y].getPiece() != null) {
-                    System.out.print(boardData[x][y].getPiece().getSymbol() + "  ");
+                    System.out.print( "|\t" + boardData[x][y].getPiece().getSymbol() + "\t");
                 } else {
-                    System.out.print("------------");
+                   System.out.print("|---------------");
                 }
 
             }
 
 
-            System.out.println();
+            System.out.println("|");
         }
 
         ArrayList<String> charlist = new ArrayList<>(List.of("a","b","c","d","e","f","g","h"));
-
+        System.out.println(" |\t=================================================================================================================================");
+        System.out.print(" |   ");
         for (String character: charlist) {
 
-            System.out.print("\t\t" + character + "\t  |");
+            System.out.print("\t\t" + character + "\t\t|");
         }
 
         p2.afficher();

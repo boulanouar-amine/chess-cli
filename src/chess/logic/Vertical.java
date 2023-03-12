@@ -19,6 +19,7 @@ public class Vertical extends Decorator{
         int fromX = getMove().getFrom().getX();
         int toX = getMove().getTo().getX();
 
+        //checks for pieces between the move
         for (int y = fromY +1; y<=toY ;y++) {
             Piece piece = Board.getBoard().getSquare(fromX,y).getPiece();
 
