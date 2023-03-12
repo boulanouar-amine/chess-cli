@@ -1,6 +1,7 @@
 package chess.pieces;
 
-import chess.logic.MovePattern;
+import chess.logic.BaseMovement;
+import chess.logic.Horizontal;
 
 public class Pawn extends Piece {
 
@@ -10,8 +11,8 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public void movePattern(MovePattern movePattern) {
-
+    public void movePattern() {
+        setMovePattern(new Horizontal(new BaseMovement()));
     }
 
 

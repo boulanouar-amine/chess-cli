@@ -2,6 +2,7 @@ package chess.pieces;
 
 import chess.Move;
 import chess.Square;
+import chess.logic.BaseMovement;
 import chess.logic.MovePattern;
 
 public abstract class Piece {
@@ -12,7 +13,11 @@ public abstract class Piece {
     public Piece(String color) {
 
         this.color = color;
-        movePattern(movePattern);
+        setMovePattern(new BaseMovement());
+    }
+
+    public String getColor() {
+        return color;
     }
 
     public String getSymbol() {
@@ -27,10 +32,10 @@ public abstract class Piece {
         this.movePattern=movePattern;
     }
 
-    public abstract void movePattern(MovePattern movePattern);
+    public abstract void movePattern();
 
     public void move(Square square){
-        System.out.println(movePattern);
+
         movePattern.move(new Move(getSquare(),square));
     }
 

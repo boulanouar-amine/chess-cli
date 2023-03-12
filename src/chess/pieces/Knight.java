@@ -1,7 +1,5 @@
 package chess.pieces;
 
-import chess.logic.MovePattern;
-
 public class Knight extends Piece {
 
 
@@ -10,7 +8,7 @@ public class Knight extends Piece {
     }
 
     @Override
-    public void movePattern(MovePattern movePattern) {
+    public void movePattern() {
 
     }
 

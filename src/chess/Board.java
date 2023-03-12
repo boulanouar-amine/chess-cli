@@ -41,7 +41,7 @@ public class Board {
             System.out.println("index out of bounds");
         }
 
-        return boardData[y][x];
+        return boardData[x][y];
     }
 
 

@@ -2,7 +2,6 @@ package chess.pieces;
 
 import chess.logic.BaseMovement;
 import chess.logic.Horizontal;
-import chess.logic.MovePattern;
 import chess.logic.Vertical;
 
 public class Rook extends Piece {
@@ -13,8 +12,8 @@ public class Rook extends Piece {
     }
 
     @Override
-    public void movePattern(MovePattern movePattern) {
-        setMovePattern(new Vertical(new Horizontal(new BaseMovement())));
+    public void movePattern() {
+        setMovePattern(new Horizontal(new Vertical(new BaseMovement())));
     }
 
 
