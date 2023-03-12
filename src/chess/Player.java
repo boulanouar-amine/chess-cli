@@ -30,4 +30,9 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
+
+    void afficher(){
+        System.out.println();
+        System.out.println("\t\t\t\t\t\t\t\t\t\t " + getName() + " \t\t\t\t");
+    }
 }

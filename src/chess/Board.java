@@ -46,13 +46,15 @@ public class Board {
 
 
     public void afficher() {
-        System.out.println("\t\t\t\t\t\t\t\t\t\t " + p1.getName() + " \t\t\t\t");
+
+        p1.afficher();
+
         for (int x = 0; x < 8; x++) {
             System.out.print(x +"|  ");
             for (int y = 0; y < 8; y++) {
 
                 if (boardData[x][y].getPiece() != null) {
-                    System.out.print(boardData[x][y].getPiece().getSymbol() + " ");
+                    System.out.print(boardData[x][y].getPiece().getSymbol() + "  ");
                 } else {
                     System.out.print("------------");
                 }
@@ -63,14 +65,14 @@ public class Board {
             System.out.println();
         }
 
-        ArrayList<String> charlist = new ArrayList<>(List.of("a","b","c","d","e","f"));
+        ArrayList<String> charlist = new ArrayList<>(List.of("a","b","c","d","e","f","g","h"));
 
         for (String character: charlist) {
 
-            System.out.print("\t\t" + character + "\t\t");
+            System.out.print("\t\t" + character + "\t  |");
         }
-        System.out.println();
-        System.out.println("\t\t\t\t\t\t\t\t\t\t " + p2.getName() + " \t\t\t\t");
+
+        p2.afficher();
     }
 
     private void initializePawns(int x, String color) {
@@ -116,20 +118,7 @@ public class Board {
 
     }
 
-    public void move(int fromX,int toX, int fromY,int toY) {
 
-        Square fromSquare = getSquare(fromX,fromY);
-        Square toSquare = getSquare(toX,toY);
-
-        move(fromSquare,toSquare);
-
-    }
-    public void move(Square fromSquare, Square toSquare) {
-        Piece piece = fromSquare.getPiece();
-
-        fromSquare.setPiece(null);
-        toSquare.setPiece(piece);
-    }
 
 
 }

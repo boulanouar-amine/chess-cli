@@ -11,6 +11,7 @@ public class Square {
         this.x = x;
         this.y = y;
         this.piece = piece;
+        if(piece!=null) this.piece.setSquare(this);
     }
 
     public int getX() {
@@ -25,6 +26,9 @@ public class Square {
         return piece;
     }
 
+    public Square getSquare(){
+        return this;
+    }
     public void setX(int x) {
         this.x = x;
     }

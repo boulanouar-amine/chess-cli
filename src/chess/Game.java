@@ -1,6 +1,8 @@
 package chess;
 
 
+import chess.pieces.Piece;
+
 public class Game {
 
 
@@ -15,13 +17,18 @@ public class Game {
 
         Board board = Board.getBoard(p1,p2);
 
+        Piece rook = board.getSquare(0, 0).getPiece();
 
-        Square square1 = board.getSquare(1, 1);
+        Square square2 = board.getSquare(3, 7);
 
-        Square square2 = board.getSquare(1, 2);
+        rook.move(square2);
 
-        board.move(square1, square2);
-        board.move(1,3, 1,4);
+
+
+
+
+
+        //todo set move following chess notation for exampe move("e4") => move("46","44")
 
         board.afficher();
     }
