@@ -37,7 +37,8 @@ public  class Move {
     }
 
     public void move() {
-       move(from,to);
+
+         move(from,to);
     }
 
 

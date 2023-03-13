@@ -124,7 +124,8 @@ public class Board {
     }
 
 
-
-
+    public Square getSquare(String string) {
+        return Square.fromString(string);
+    }
 }
 

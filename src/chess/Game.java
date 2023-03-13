@@ -12,7 +12,7 @@ public class Game {
 
 
 
-        Player p1 = new Player("amine","red");
+        Player p1 = new Player("test","black");
         Player p2 = new Player("green");
 
         Board board = Board.getBoard(p1,p2);
@@ -23,18 +23,20 @@ public class Game {
 
 
 
-        Square square4 = board.getSquare(0, 4);
+        Square square4 = board.getSquare(0, 5);
 
         System.out.println("Pawn move");
         pawn.move(square4);
 
-        System.out.println("Rook move");
+        System.out.println("Rook move to a3");
         rook.move("a3");
+        System.out.println("Rook move to b4");
+//        rook.move("b3");
+        System.out.println("blue pawn move to e4");
 
-        rook.move("b3");
 
+        System.out.println("moves the red pawn to clear for the bishop");
 
-        bluePawn.move("e4");
 
         //todo set move following chess notation for exampe move("e4") => move("46","44")
 

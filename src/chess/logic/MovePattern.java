@@ -10,12 +10,14 @@ public abstract class MovePattern {
 
     private Move move;
 
+
     public Move getMove() {
         return move;
     }
 
     public abstract boolean isAvalidMove();
     public void move(Move move){
+
         this.move= move;
         if(isAvalidMove()) move.move();
 
@@ -26,6 +28,7 @@ public abstract class MovePattern {
         }
 
     }
+
 
 
     public boolean isSameColor(Piece piece){
